@@ -1,0 +1,44 @@
+# deploy openstack with kolla-ansible
+## openstack manager network for vip
+## /etc/ansible/hosts
+## /etc/hosts
+## All three networks must be the same
+## script worked only in ansible 2.5 or less
+yum -y remove ansible
+pip install ansible==2.5.6 -i https://mirrors.aliyun.com/pypi/simple
+
+kolla-ansible -i multinode prechecks
+kolla-ansible -i multinode deploy
+kolla-ansible -i multinode post-deploy
+echo "source /etc/kolla/admin-openrc.sh" >> /root/.bash_profile
+source /etc/kolla/admin-openrc.sh
+openstack server list
+nova list
+
+# config networking script
+vi /usr/share/kolla-ansible/init-runonce
+sh init-runonce
+
+# config bridge networking on dashboard admin network interface
+1. remove router;
+2. remove network;
+3. create network without external:
+   /etc/kolla/neutron-openvswitch-agent/ml2_conf.ini
+   flat_networks = physnet1 
+4. config subnet:
+   network; gateway; dns; dhcp;
+
+# destroy openstack and docker images
+kolla-ansible -i multinode destroy --include-images --yes-i-really-really-mean-it
+
+# python error fix
+pip install requests urllib3 pyOpenSSL --force --upgrade
+pip show pyOpenSSL
+cd /usr/lib64/python2.7/site-packages
+ls |grep pyOpenSSL
+mv pyOpenSSL-0.13.1-py2.7.egg-info pyOpenSSL-0.13.1-py2.7.egg-info.bak
+
+#edit horizon container logo.svg and logo-splash.svg 
+docker cp horizon:/var/lib/kolla/venv/lib/python2.7/site-packages/static/dashboard/img/logo-splash.svg ./
+docker cp logo-splash.svg horizon:/var/lib/kolla/venv/lib/python2.7/site-packages/static/dashboard/img/
+docker restart horizon

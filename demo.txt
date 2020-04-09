@@ -1,0 +1,303 @@
+ID CLASS WEIGHT    TYPE NAME       STATUS REWEIGHT PRI-AFF 
+-1       130.96747 root default                            
+-7        43.65582     host hpc001                         
+ 2   hdd   3.63799         osd.2       up  1.00000 1.00000 
+ 5   hdd   3.63799         osd.5       up  1.00000 1.00000 
+ 8   hdd   3.63799         osd.8       up  1.00000 1.00000 
+11   hdd   3.63799         osd.11      up  1.00000 1.00000 
+14   hdd   3.63799         osd.14      up  1.00000 1.00000 
+17   hdd   3.63799         osd.17      up  1.00000 1.00000 
+20   hdd   3.63799         osd.20      up  1.00000 1.00000 
+23   hdd   3.63799         osd.23      up  1.00000 1.00000 
+26   hdd   3.63799         osd.26      up  1.00000 1.00000 
+28   hdd   3.63799         osd.28      up  1.00000 1.00000 
+32   hdd   3.63799         osd.32      up  1.00000 1.00000 
+35   hdd   3.63799         osd.35      up  1.00000 1.00000 
+-3        43.65582     host hpc002                         
+ 0   hdd   3.63799         osd.0       up  1.00000 1.00000 
+ 3   hdd   3.63799         osd.3       up  1.00000 1.00000 
+ 6   hdd   3.63799         osd.6       up  1.00000 1.00000 
+10   hdd   3.63799         osd.10      up  1.00000 1.00000 
+12   hdd   3.63799         osd.12      up  1.00000 1.00000 
+16   hdd   3.63799         osd.16      up  1.00000 1.00000 
+19   hdd   3.63799         osd.19      up  1.00000 1.00000 
+22   hdd   3.63799         osd.22      up  1.00000 1.00000 
+24   hdd   3.63799         osd.24      up  1.00000 1.00000 
+27   hdd   3.63799         osd.27      up  1.00000 1.00000 
+30   hdd   3.63799         osd.30      up  1.00000 1.00000 
+33   hdd   3.63799         osd.33      up  1.00000 1.00000 
+-5        43.65582     host hpc003                         
+ 1   hdd   3.63799         osd.1       up  1.00000 1.00000 
+ 4   hdd   3.63799         osd.4       up  1.00000 1.00000 
+ 7   hdd   3.63799         osd.7       up  1.00000 1.00000 
+ 9   hdd   3.63799         osd.9       up  1.00000 1.00000 
+13   hdd   3.63799         osd.13      up  1.00000 1.00000 
+15   hdd   3.63799         osd.15      up  1.00000 1.00000 
+18   hdd   3.63799         osd.18      up  1.00000 1.00000 
+21   hdd   3.63799         osd.21      up  1.00000 1.00000 
+25   hdd   3.63799         osd.25      up  1.00000 1.00000 
+29   hdd   3.63799         osd.29      up  1.00000 1.00000 
+31   hdd   3.63799         osd.31      up  1.00000 1.00000 
+34   hdd   3.63799         osd.34      up  1.00000 1.00000 
+  cluster:
+    id:     f8b1d24a-5aa4-47f7-829b-76b149730661
+    health: HEALTH_OK
+ 
+  services:
+    mon: 3 daemons, quorum hpc001,hpc002,hpc003
+    mgr: hpc001(active)
+    mds: cephfs-1/1/1 up  {0=hpc001=up:active}
+    osd: 36 osds: 36 up, 36 in
+ 
+  data:
+    pools:   5 pools, 1280 pgs
+    objects: 931  objects, 4.5 GiB
+    usage:   81 GiB used, 131 TiB / 131 TiB avail
+    pgs:     1280 active+clean
+ 
+GLOBAL:
+    SIZE        AVAIL       RAW USED     %RAW USED 
+    131 TiB     131 TiB       81 GiB          0.06 
+POOLS:
+    NAME                ID     USED        %USED     MAX AVAIL     OBJECTS 
+    cephfs_data         1      2.5 GiB         0        62 TiB         646 
+    cephfs_metadata     2      2.8 MiB         0        41 TiB          23 
+    images              3      2.0 GiB         0        62 TiB         262 
+    vms                 4          0 B         0        62 TiB           0 
+    volumes             5          0 B         0        62 TiB           0 
+
+openstack image list
++--------------------------------------+----------+--------+
+| ID                                   | Name     | Status |
++--------------------------------------+----------+--------+
+| 752f29f3-a7d7-4c45-9510-8b95dd466771 | c762.raw | active |
++--------------------------------------+----------+--------+
+
+hpc01 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           251G         13G        223G         26M         14G        237G
+Swap:          4.0G          0B        4.0G
+hpc02 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           251G         13G        228G         25M        9.7G        237G
+Swap:          4.0G          0B        4.0G
+hpc03 | SUCCESS | rc=0 >>
+              total        used        free      shared  buff/cache   available
+Mem:           251G         12G        229G         25M        9.5G        237G
+Swap:          4.0G          0B        4.0G
+
+hpc01 | SUCCESS | rc=0 >>
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                48
+On-line CPU(s) list:   0-47
+Thread(s) per core:    2
+Core(s) per socket:    12
+
+hpc02 | SUCCESS | rc=0 >>
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                48
+On-line CPU(s) list:   0-47
+Thread(s) per core:    2
+Core(s) per socket:    12
+
+hpc03 | SUCCESS | rc=0 >>
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                48
+On-line CPU(s) list:   0-47
+Thread(s) per core:    2
+Core(s) per socket:    12
+
+hpc01 | SUCCESS | rc=0 >>
+
+CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS                    NAMES
+79a1f209dcde        10.20.10.10:4000/kolla/centos-source-horizon:rocky                     "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                horizon
+f5a3b5e573bc        10.20.10.10:4000/kolla/centos-source-heat-engine:rocky                 "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                heat_engine
+930b5da31bcb        10.20.10.10:4000/kolla/centos-source-heat-api-cfn:rocky                "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                heat_api_cfn
+d7d511114061        10.20.10.10:4000/kolla/centos-source-heat-api:rocky                    "dumb-init --single-…"   39 minutes ago      Up 39 minutes                                heat_api
+0dee421c82e2        10.20.10.10:4000/kolla/centos-source-neutron-metadata-agent:rocky      "dumb-init --single-…"   40 minutes ago      Up 40 minutes                                neutron_metadata_agent
+a674e703baa1        10.20.10.10:4000/kolla/centos-source-neutron-l3-agent:rocky            "dumb-init --single-…"   40 minutes ago      Up 40 minutes                                neutron_l3_agent
+e91ebb45db2f        10.20.10.10:4000/kolla/centos-source-neutron-dhcp-agent:rocky          "dumb-init --single-…"   40 minutes ago      Up 40 minutes                                neutron_dhcp_agent
+8558e37a9060        10.20.10.10:4000/kolla/centos-source-neutron-openvswitch-agent:rocky   "dumb-init --single-…"   40 minutes ago      Up 40 minutes                                neutron_openvswitch_agent
+1cfe1509b9e9        10.20.10.10:4000/kolla/centos-source-neutron-server:rocky              "dumb-init --single-…"   40 minutes ago      Up 40 minutes                                neutron_server
+dd0059cbd7b8        10.20.10.10:4000/kolla/centos-source-openvswitch-vswitchd:rocky        "dumb-init --single-…"   42 minutes ago      Up 42 minutes                                openvswitch_vswitchd
+457d52b30330        10.20.10.10:4000/kolla/centos-source-openvswitch-db-server:rocky       "dumb-init --single-…"   42 minutes ago      Up 42 minutes                                openvswitch_db
+7166ef99b3ad        10.20.10.10:4000/kolla/centos-source-nova-compute:rocky                "dumb-init --single-…"   42 minutes ago      Up 42 minutes                                nova_compute
+9c6901e0e278        10.20.10.10:4000/kolla/centos-source-nova-novncproxy:rocky             "dumb-init --single-…"   42 minutes ago      Up 42 minutes                                nova_novncproxy
+9d6cab1c7d0a        10.20.10.10:4000/kolla/centos-source-nova-consoleauth:rocky            "dumb-init --single-…"   42 minutes ago      Up 42 minutes                                nova_consoleauth
+a2057e62e8f2        10.20.10.10:4000/kolla/centos-source-nova-conductor:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                nova_conductor
+f1ea157e3ce3        10.20.10.10:4000/kolla/centos-source-nova-scheduler:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                nova_scheduler
+d0d9a7c6d153        10.20.10.10:4000/kolla/centos-source-nova-api:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                nova_api
+261ef1bc16fe        10.20.10.10:4000/kolla/centos-source-nova-placement-api:rocky          "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                placement_api
+fd2a2f5236a7        10.20.10.10:4000/kolla/centos-source-nova-libvirt:rocky                "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                nova_libvirt
+de1797f83295        10.20.10.10:4000/kolla/centos-source-nova-ssh:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                                nova_ssh
+0adf95869e43        10.20.10.10:4000/kolla/centos-source-cinder-backup:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                             cinder_backup
+665d81225617        10.20.10.10:4000/kolla/centos-source-cinder-volume:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                             cinder_volume
+2ffb509f5566        10.20.10.10:4000/kolla/centos-source-cinder-scheduler:rocky            "dumb-init --single-…"   About an hour ago   Up About an hour                             cinder_scheduler
+d3f0aadf38b5        10.20.10.10:4000/kolla/centos-source-cinder-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                             cinder_api
+0228c29a88af        10.20.10.10:4000/kolla/centos-source-glance-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                             glance_api
+c878346797c6        10.20.10.10:4000/kolla/centos-source-keystone-fernet:rocky             "dumb-init --single-…"   About an hour ago   Up About an hour                             keystone_fernet
+12a46a5dca2f        10.20.10.10:4000/kolla/centos-source-keystone-ssh:rocky                "dumb-init --single-…"   About an hour ago   Up About an hour                             keystone_ssh
+327e8e51881f        10.20.10.10:4000/kolla/centos-source-keystone:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                             keystone
+3ec98a654305        10.20.10.10:4000/kolla/centos-source-rabbitmq:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                             rabbitmq
+56023789ac3d        10.20.10.10:4000/kolla/centos-source-mariadb:rocky                     "dumb-init kolla_sta…"   About an hour ago   Up About an hour                             mariadb
+837f4cbd9d71        10.20.10.10:4000/kolla/centos-source-memcached:rocky                   "dumb-init --single-…"   About an hour ago   Up About an hour                             memcached
+4c3d3c873a16        10.20.10.10:4000/kolla/centos-source-keepalived:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                             keepalived
+688a9c4293e6        10.20.10.10:4000/kolla/centos-source-haproxy:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                             haproxy
+56dbf579a319        10.20.10.10:4000/kolla/centos-source-chrony:rocky                      "dumb-init --single-…"   About an hour ago   Up About an hour                             chrony
+24b396d1a0b5        10.20.10.10:4000/kolla/centos-source-cron:rocky                        "dumb-init --single-…"   About an hour ago   Up About an hour                             cron
+a7f87f93b80f        10.20.10.10:4000/kolla/centos-source-kolla-toolbox:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                             kolla_toolbox
+5533d9e582d7        10.20.10.10:4000/kolla/centos-source-fluentd:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                             fluentd
+7d14029b0445        registry:2                                                             "/entrypoint.sh /etc…"   4 hours ago         Up 4 hours          0.0.0.0:4000->5000/tcp   registry
+5152ef63ec69        ceph/daemon                                                            "/opt/ceph-container…"   4 hours ago         Up 4 hours                                   mds
+c0d0789f85fd        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdk
+5612dcaddf71        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdl
+f3f4f1af6d8e        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdj
+296cfc9bf271        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdi
+5beb786d36c9        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdh
+ac4df43109d9        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdg
+565fc9dd273c        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdf
+6dba1a5056a2        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sde
+9960c4cde4ba        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdd
+c62719fec02b        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdc
+34b924098568        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sdb
+14abc579a4ed        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   sda
+e5c8d0b1c6bf        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   mgr
+4e4b376e59aa        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                                   mon
+hpc02 | SUCCESS | rc=0 >>
+CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS               NAMES
+a1a3d507f946        10.20.10.10:4000/kolla/centos-source-horizon:rocky                     "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           horizon
+e7657352271d        10.20.10.10:4000/kolla/centos-source-heat-engine:rocky                 "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_engine
+90c8c802e95c        10.20.10.10:4000/kolla/centos-source-heat-api-cfn:rocky                "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_api_cfn
+7b2e4ea23918        10.20.10.10:4000/kolla/centos-source-heat-api:rocky                    "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_api
+30d8ddc15fb3        10.20.10.10:4000/kolla/centos-source-neutron-metadata-agent:rocky      "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_metadata_agent
+a151668df9f4        10.20.10.10:4000/kolla/centos-source-neutron-l3-agent:rocky            "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_l3_agent
+83f96f52df18        10.20.10.10:4000/kolla/centos-source-neutron-dhcp-agent:rocky          "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_dhcp_agent
+53c224d02214        10.20.10.10:4000/kolla/centos-source-neutron-openvswitch-agent:rocky   "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_openvswitch_agent
+53adc97f5045        10.20.10.10:4000/kolla/centos-source-neutron-server:rocky              "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_server
+26587cca9feb        10.20.10.10:4000/kolla/centos-source-openvswitch-vswitchd:rocky        "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           openvswitch_vswitchd
+ea3f68961a45        10.20.10.10:4000/kolla/centos-source-openvswitch-db-server:rocky       "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           openvswitch_db
+7b7b97db6837        10.20.10.10:4000/kolla/centos-source-nova-compute:rocky                "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_compute
+19f9e9661205        10.20.10.10:4000/kolla/centos-source-nova-novncproxy:rocky             "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_novncproxy
+430454f0b66c        10.20.10.10:4000/kolla/centos-source-nova-consoleauth:rocky            "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_consoleauth
+a3ad802dcdba        10.20.10.10:4000/kolla/centos-source-nova-conductor:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_conductor
+2c600b2c1fbe        10.20.10.10:4000/kolla/centos-source-nova-scheduler:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_scheduler
+58f17848f56f        10.20.10.10:4000/kolla/centos-source-nova-api:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_api
+32fdcf5d3da7        10.20.10.10:4000/kolla/centos-source-nova-placement-api:rocky          "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           placement_api
+fba8e26579aa        10.20.10.10:4000/kolla/centos-source-nova-libvirt:rocky                "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_libvirt
+6adc68367a11        10.20.10.10:4000/kolla/centos-source-nova-ssh:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_ssh
+220642fde5dc        10.20.10.10:4000/kolla/centos-source-cinder-backup:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_backup
+254383449edc        10.20.10.10:4000/kolla/centos-source-cinder-volume:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_volume
+1f2c1ad61c9c        10.20.10.10:4000/kolla/centos-source-cinder-scheduler:rocky            "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_scheduler
+43b4cd42a69f        10.20.10.10:4000/kolla/centos-source-cinder-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_api
+f2ffcc52e5b1        10.20.10.10:4000/kolla/centos-source-glance-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        glance_api
+dce15b5c6386        10.20.10.10:4000/kolla/centos-source-keystone-fernet:rocky             "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone_fernet
+271cd106201f        10.20.10.10:4000/kolla/centos-source-keystone-ssh:rocky                "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone_ssh
+8db31396d996        10.20.10.10:4000/kolla/centos-source-keystone:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone
+e73fea0d15b4        10.20.10.10:4000/kolla/centos-source-rabbitmq:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                        rabbitmq
+eb23af70396c        10.20.10.10:4000/kolla/centos-source-mariadb:rocky                     "dumb-init kolla_sta…"   About an hour ago   Up About an hour                        mariadb
+4a0ec422d17f        10.20.10.10:4000/kolla/centos-source-memcached:rocky                   "dumb-init --single-…"   About an hour ago   Up About an hour                        memcached
+e142343e419d        10.20.10.10:4000/kolla/centos-source-keepalived:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        keepalived
+999dc1431dc3        10.20.10.10:4000/kolla/centos-source-haproxy:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                        haproxy
+882ef3870cca        10.20.10.10:4000/kolla/centos-source-chrony:rocky                      "dumb-init --single-…"   About an hour ago   Up About an hour                        chrony
+54d7209db37b        10.20.10.10:4000/kolla/centos-source-cron:rocky                        "dumb-init --single-…"   About an hour ago   Up About an hour                        cron
+eed4628c086b        10.20.10.10:4000/kolla/centos-source-kolla-toolbox:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        kolla_toolbox
+278661baa5a8        10.20.10.10:4000/kolla/centos-source-fluentd:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                        fluentd
+c98732e2298c        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdk
+5138c18abd9c        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdl
+cff65f08b923        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdj
+d7fa0edf7b77        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdi
+991bd2583507        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdh
+03c5467113d6        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdg
+9ba7f9f1ea0d        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdf
+7fa27e91f54b        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sde
+cb9db5fd1c24        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdd
+d44238d5cede        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdc
+f81dbc641ed1        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdb
+95bc946bec8d        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sda
+70b96b42697b        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              mon
+hpc03 | SUCCESS | rc=0 >>
+CONTAINER ID        IMAGE                                                                  COMMAND                  CREATED             STATUS              PORTS               NAMES
+269a8dddbebb        10.20.10.10:4000/kolla/centos-source-horizon:rocky                     "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           horizon
+a27d84bb1448        10.20.10.10:4000/kolla/centos-source-heat-engine:rocky                 "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_engine
+10dfef6cdcfb        10.20.10.10:4000/kolla/centos-source-heat-api-cfn:rocky                "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_api_cfn
+616be841222a        10.20.10.10:4000/kolla/centos-source-heat-api:rocky                    "dumb-init --single-…"   39 minutes ago      Up 39 minutes                           heat_api
+696e05f8c40e        10.20.10.10:4000/kolla/centos-source-neutron-metadata-agent:rocky      "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_metadata_agent
+d5792e086d30        10.20.10.10:4000/kolla/centos-source-neutron-l3-agent:rocky            "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_l3_agent
+f108b6a2811e        10.20.10.10:4000/kolla/centos-source-neutron-dhcp-agent:rocky          "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_dhcp_agent
+56359aca6b52        10.20.10.10:4000/kolla/centos-source-neutron-openvswitch-agent:rocky   "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_openvswitch_agent
+25624e10860e        10.20.10.10:4000/kolla/centos-source-neutron-server:rocky              "dumb-init --single-…"   40 minutes ago      Up 40 minutes                           neutron_server
+c8e7ef9ceb7c        10.20.10.10:4000/kolla/centos-source-openvswitch-vswitchd:rocky        "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           openvswitch_vswitchd
+c18e3563c24e        10.20.10.10:4000/kolla/centos-source-openvswitch-db-server:rocky       "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           openvswitch_db
+ab86ceaf5296        10.20.10.10:4000/kolla/centos-source-nova-compute:rocky                "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_compute
+b8b370ebd6c3        10.20.10.10:4000/kolla/centos-source-nova-novncproxy:rocky             "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_novncproxy
+551d85e798b6        10.20.10.10:4000/kolla/centos-source-nova-consoleauth:rocky            "dumb-init --single-…"   42 minutes ago      Up 42 minutes                           nova_consoleauth
+f7f9f7d884d9        10.20.10.10:4000/kolla/centos-source-nova-conductor:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_conductor
+7abd333026df        10.20.10.10:4000/kolla/centos-source-nova-scheduler:rocky              "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_scheduler
+a0764492a67a        10.20.10.10:4000/kolla/centos-source-nova-api:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_api
+61fdc039776a        10.20.10.10:4000/kolla/centos-source-nova-placement-api:rocky          "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           placement_api
+f00fbde18441        10.20.10.10:4000/kolla/centos-source-nova-libvirt:rocky                "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_libvirt
+61497e295210        10.20.10.10:4000/kolla/centos-source-nova-ssh:rocky                    "dumb-init --single-…"   43 minutes ago      Up 43 minutes                           nova_ssh
+af8a6858e6da        10.20.10.10:4000/kolla/centos-source-cinder-backup:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_backup
+74bbce7fa72e        10.20.10.10:4000/kolla/centos-source-cinder-volume:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_volume
+df7527e48fcc        10.20.10.10:4000/kolla/centos-source-cinder-scheduler:rocky            "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_scheduler
+624822dc999a        10.20.10.10:4000/kolla/centos-source-cinder-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        cinder_api
+5781d9e24958        10.20.10.10:4000/kolla/centos-source-glance-api:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        glance_api
+3aaa071cf673        10.20.10.10:4000/kolla/centos-source-keystone-fernet:rocky             "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone_fernet
+2629440266d2        10.20.10.10:4000/kolla/centos-source-keystone-ssh:rocky                "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone_ssh
+7c0dee02a9dd        10.20.10.10:4000/kolla/centos-source-keystone:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                        keystone
+909c23cbd75d        10.20.10.10:4000/kolla/centos-source-rabbitmq:rocky                    "dumb-init --single-…"   About an hour ago   Up About an hour                        rabbitmq
+0a9d1f9e5414        10.20.10.10:4000/kolla/centos-source-mariadb:rocky                     "dumb-init kolla_sta…"   About an hour ago   Up About an hour                        mariadb
+68d00446d5d2        10.20.10.10:4000/kolla/centos-source-memcached:rocky                   "dumb-init --single-…"   About an hour ago   Up About an hour                        memcached
+2faabadf5681        10.20.10.10:4000/kolla/centos-source-keepalived:rocky                  "dumb-init --single-…"   About an hour ago   Up About an hour                        keepalived
+8f2f26d55031        10.20.10.10:4000/kolla/centos-source-haproxy:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                        haproxy
+4a60fafad25d        10.20.10.10:4000/kolla/centos-source-chrony:rocky                      "dumb-init --single-…"   About an hour ago   Up About an hour                        chrony
+6ac42b0775a1        10.20.10.10:4000/kolla/centos-source-cron:rocky                        "dumb-init --single-…"   About an hour ago   Up About an hour                        cron
+ec78ad9df1c8        10.20.10.10:4000/kolla/centos-source-kolla-toolbox:rocky               "dumb-init --single-…"   About an hour ago   Up About an hour                        kolla_toolbox
+30a7881aa16f        10.20.10.10:4000/kolla/centos-source-fluentd:rocky                     "dumb-init --single-…"   About an hour ago   Up About an hour                        fluentd
+7b052347e4f3        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdk
+555d8026139b        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdl
+e8934a3a7bcb        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdj
+424685e1a28d        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdi
+72ffb051fdfa        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdh
+5ecadd0210c7        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdg
+2c4fd0c36afe        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdf
+e2fca6cd99aa        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sde
+5ef7221b7b11        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdd
+18223517e2f8        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdc
+017b07889256        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sdb
+c1dba20fe0a6        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              sda
+e7c8bc8cf453        ceph/daemon                                                            "/opt/ceph-container…"   5 hours ago         Up 5 hours                              mon
+
+hpc01 | SUCCESS | rc=0 >>
+54
+hpc02 | SUCCESS | rc=0 >>
+51
+hpc03 | SUCCESS | rc=0 >>
+51
+
+10.20.10.10:6789:/         ceph       63T  2.5G   63T    1% /cephfs
+
+dd if=/dev/zero of=testing bs=1M count=200000
+记录了200000+0 的读入
+记录了200000+0 的写出
+209715200000字节(210 GB)已复制，155.692 秒，1.3 GB/秒
+
+dd if=/dev/zero of=test bs=4k count=20000000
+
+记录了20000000+0 的读入
+记录了20000000+0 的写出
+81920000000字节(82 GB)已复制，80.5547 秒，1.0 GB/秒
+
+openstack network list
++--------------------------------------+--------+--------------------------------------+
+| ID                                   | Name   | Subnets                              |
++--------------------------------------+--------+--------------------------------------+
+| ce5c909f-1f5d-4d51-8cbe-37f3afd9ad4f | public | 1eca8499-bf15-448e-b1cc-c51bdb5f08e6 |
++--------------------------------------+--------+--------------------------------------+
+

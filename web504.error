@@ -1,0 +1,10 @@
+A.出现web不可访问504 gateway timeout的情况，解决方法如下：(在HPC1-3控制节点操作）
+1 docker stop mariadb
+2 删除/var/lib/docker/volumes/mariadb/_data/grastate.dat文件
+3 docker start mariadb
+每个节点都执行以上操作。如果有的节点mariadb启动成功了，有的节点还是不停重启，那就把所有mariadb节点重启。重启后，mariadb容器应该全是Exited状态，执行：kolla-ansible -i multinode mariadb_recovery，即可修复mariadb
+
+B.虚拟机随主机开机启动配置如下：
+修改 /etc/kolla/nova-compute/nova.conf，添加两个选项：
+start_guests_on_host_boot = True
+resume_guests_state_on_host_boot =True

@@ -1,0 +1,12 @@
+1. install kolla-ansible
+2. config openstack local repository
+3. config update docker
+4. config kolla-ansible
+5. create ceph pool for openstack
+6. set ceph pool for openstack and update globals.yaml
+7. config kolla-ansible multinode  
+8. kolla-ansible -i multinode prechecks
+9. kolla-ansible -i multinode deploy
+10.kolla-ansible post-deploy
+11.sh init-runonce to deploy networking
+12.kolla-ansible -i multinode destroy --include-images --yes-i-really-really-mean-it

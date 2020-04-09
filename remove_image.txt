@@ -1,0 +1,36 @@
+[root@hpc01 ~]# openstack image list
++--------------------------------------+----------+--------+
+| ID                                   | Name     | Status |
++--------------------------------------+----------+--------+
+| a7df8e00-cc96-4afd-b9f2-e386c5767621 | c762.raw | active |
+| 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3 | win2008  | active |
++--------------------------------------+----------+--------+
+
+[root@hpc01 ~]# rbd snap list 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3 -p images
+SNAPID NAME    SIZE TIMESTAMP                
+     5 snap 5.1 GiB Fri Mar 13 23:05:11 2020 
+
+[root@hpc01 ~]# rbd snap rm 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3@snap -p images
+Removing snap: 02020-03-13 23:29:18.975 7f75a9ffb700 -1 librbd::Operations: snapshot is protected
+% complete...failed.
+rbd: snapshot 'snap' is protected from removal.
+
+[root@hpc01 ~]# rbd snap unprotect 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3@snap -p images
+
+[root@hpc01 ~]# rbd snap ls 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3 -p images
+SNAPID NAME    SIZE TIMESTAMP                
+     5 snap 5.1 GiB Fri Mar 13 23:05:11 2020 
+
+[root@hpc01 ~]# rbd snap rm 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3@snap -p images
+Removing snap: 100% complete...done.
+
+[root@hpc01 ~]# rbd rm 6fc3fcac-ea9c-4420-a9e3-bc65502c31c3 -p images
+Removing image: 100% complete...done.
+
+[root@hpc01 ~]# openstack image delete win2008
+[root@hpc01 ~]# openstack image list
++--------------------------------------+----------+--------+
+| ID                                   | Name     | Status |
++--------------------------------------+----------+--------+
+| a7df8e00-cc96-4afd-b9f2-e386c5767621 | c762.raw | active |
++--------------------------------------+----------+--------+
