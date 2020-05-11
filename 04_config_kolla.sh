@@ -27,6 +27,7 @@ docker_namespace: "kolla"
 network_interface: "eth0"
 neutron_external_interface: "eth1"
 enable_cinder: "yes"
+#enable_cinder_backend_nfs: "yes"
 keepalived_virtual_router_id: "57"
 ironic_dnsmasq_dhcp_range:
 tempest_image_id:
