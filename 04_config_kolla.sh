@@ -3,8 +3,6 @@ mkdir -p /etc/kolla
 cd /etc/kolla
 cp -r /usr/share/kolla-ansible/etc_examples/kolla/* .
 
-mkdir -p /etc/kolla/config
-
 cd /etc/kolla/
 kolla-genpwd
 sed -i 's/^keystone_admin.*/keystone_admin_password: admin/' passwords.yml
