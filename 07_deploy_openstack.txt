@@ -15,6 +15,9 @@ source /etc/kolla/admin-openrc.sh
 openstack server list
 nova list
 
+# tag install
+kolla-ansible deploy -t cinder
+
 # config networking script
 vi /usr/share/kolla-ansible/init-runonce
 sh init-runonce
