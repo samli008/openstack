@@ -17,6 +17,7 @@ nova list
 
 # tag install
 kolla-ansible deploy -t cinder
+kolla-ansible deploy -t cinder,iscsi
 
 # config networking script
 vi /usr/share/kolla-ansible/init-runonce
