@@ -47,6 +47,9 @@ network_interface: "em1"
 neutron_external_interface: "em2"
 enable_cinder: "yes"
 #enable_cinder_backend_nfs: "yes"
+#enable_cinder_backend_iscsi: "yes"
+#enable_cinder_backend_lvm:: "yes"
+#cinder_volume_group: "cinder-volumes"
 keepalived_virtual_router_id: "57"
 ironic_dnsmasq_dhcp_range:
 tempest_image_id:
