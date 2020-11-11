@@ -1,0 +1,11 @@
+# set vlan network on each nodes
+vi /etc/kolla/neutron-server/ml2_conf.ini
+tenant_network_types = vlan
+network_vlan_ranges = physnet1
+
+vi /etc/kolla/neutron-openvswitch-agent/ml2_conf.ini
+tenant_network_types = vlan
+network_vlan_ranges = physnet1
+
+docker restart neutron_server
+docker restart neutron_openvswitch_agent
